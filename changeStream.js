@@ -3,7 +3,7 @@ const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
 // Connection string
-const url = "mongodb+srv://julien:Dtb123basF789*@tmppac-ojq5t.mongodb.net/testdb?retryWrites=true&w=majority";
+const url = "mongodb+srv://usr:pwd@url/testdb?retryWrites=true&w=majority";
 
 // Create Client
 const client = new MongoClient(url, { useUnifiedTopology: true });
@@ -29,7 +29,7 @@ function changeStream(db, callback) {
     console.log(fullDocument);
     collection.updateOne(
        {"_id":fullDocument._id},
-       [{$set: {nbContrats:{$size:"$contrats"}}}]
+       [{$set: {nbContracts:{$size:"$contracts"}}}]
     )
 
   });
